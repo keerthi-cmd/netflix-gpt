@@ -16,14 +16,14 @@ npx tailwindcss init -p
 
 open tailwind.config.js:
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+content: [
+"./index.html",
+"./src/**/*.{js,ts,jsx,tsx}",
+],
+theme: {
+extend: {},
+},
+plugins: [],
 }
 
 open index.css:
@@ -31,9 +31,8 @@ open index.css:
 @tailwind components;
 @tailwind utilities;
 
-Step 3:
+Step 3: Create github repository and after that follow the commands shown by github
 
+Step 4: Install ES7+ React/Redux/React-Native snippets
 
-
-
-
+Step 5: Install React router => npm install -d react-router
