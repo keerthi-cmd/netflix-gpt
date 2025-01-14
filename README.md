@@ -36,3 +36,16 @@ Step 3: Create github repository and after that follow the commands shown by git
 Step 4: Install ES7+ React/Redux/React-Native snippets
 
 Step 5: Install React router => npm install -d react-router
+
+Step 6: Adding authentication using firebase
+create project
+later <> click on this web
+follow the steps
+npm install firebase
+npm install -g firebase-tools
+firebase login --reauth => if any problem occurs
+firebase init
+npm run build
+firebase deploy
+
+for vite app deployment there might be some steps differ please check
