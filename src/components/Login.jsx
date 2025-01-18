@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import Header from "./Header";
-import { BG_URL } from "../utls/constants";
+import { BG_URL, USER_AVATAR } from "../utls/constants";
 import { checkValidData } from "../utls/validate";
 import {
   createUserWithEmailAndPassword,
@@ -25,11 +25,9 @@ const Login = () => {
 
   const handleButtonClick = () => {
     //validate form data
-    console.log("handlebutton");
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
     if (message) return;
-    console.log("handlebutton");
     if (!isSignInForm) {
       createUserWithEmailAndPassword(
         auth,
@@ -41,8 +39,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -54,7 +51,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -74,8 +70,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
