@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utls/constants";
 import { signOut } from "firebase/auth";
@@ -6,13 +7,12 @@ import { auth } from "../utls/firebase";
 import { useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utls/userSlice";
-import { useDispatch } from "react-redux";
 import { toggleGptSearchView } from "../utls/gptSlice";
 import { changeLanguage } from "../utls/configSlice";
 
 const Header = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   const handleSignOut = () => {
