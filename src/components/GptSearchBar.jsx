@@ -35,19 +35,12 @@ const GptSearchBar = () => {
       model: "gpt-4o-mini",
       store: true,
     });
-    //console.log(gptResults.choices?.[0]?.message?.content);
     const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
     const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
-    // console.log(promiseArray);
     const tmdbResults = await Promise.all(promiseArray);
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults })
     );
-
-    // const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-    // const prompt = "Explain how AI works";
-
     // const result = await model.generateContent(gptQuery);
     //console.log(result.response.text() + "gemini api");
   };

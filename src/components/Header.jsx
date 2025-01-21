@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utls/constants";
@@ -9,7 +9,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utls/userSlice";
 import { toggleGptSearchView } from "../utls/gptSlice";
 import { changeLanguage } from "../utls/configSlice";
-
+import { clearGptMovieResult } from "../utls/gptSlice";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -46,6 +46,7 @@ const Header = () => {
 
   const handleGptSearchClick = () => {
     dispatch(toggleGptSearchView());
+    dispatch(clearGptMovieResult());
   };
 
   const handleLanguageChange = (e) => {
