@@ -4,7 +4,7 @@ import { BG_URL } from "../utls/constants";
 
 const GPTSearch = () => {
   return (
-    <div>
+    <>
       <div className="fixed -z-10">
         <img
           className="h-screen object-cover w-screen bg-fixed"
@@ -12,9 +12,11 @@ const GPTSearch = () => {
           alt="logo"
         />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
-    </div>
+      <div className="pt-[30%] md:pt-0">
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
+    </>
   );
 };
 

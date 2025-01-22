@@ -25,7 +25,6 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
-    console.log(searchText.current.value);
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
       searchText.current.value +
@@ -45,10 +44,10 @@ const GptSearchBar = () => {
     //console.log(result.response.text() + "gemini api");
   };
   return (
-    <div className="pt-[20%] flex justify-center">
+    <div className="pt-[35%] md:pt-[10%] flex justify-center">
       <form
         action=""
-        className="w-1/2 bg-black grid grid-cols-12"
+        className="w-full md:w-1/2 bg-black grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
