@@ -49,3 +49,9 @@ npm run build
 firebase deploy
 
 for vite app deployment there might be some steps differ please check
+
+Step 7: for running locally: npm run dev
+
+Step 8: firebase link:
+https://netflix-1890b.web.app/
+
